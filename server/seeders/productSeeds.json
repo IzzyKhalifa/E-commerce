@@ -1,0 +1,17 @@
+[
+    {
+        "product_name": "T-shirts",
+        "price": 60 ,
+        "stock": 200  
+    },
+    {
+        "product_name": "shorts",
+        "price": 50 ,
+        "stock": 100  
+    },
+    {
+        "product_name": "hats",
+        "price": 20 ,
+        "stock": 50  
+    }
+]

@@ -1,19 +1,11 @@
 const { Schema, model } = require('mongoose');
 
-const categorySchema = new Schema(
-  {
-    id: {
-      type: Number,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+const categorySchema = new Schema({
     category_name: {
       type: String,
-      allowNull: false,
+      required: true,
     },
-  },
-);
+  });
 
 const Category = model('Category', categorySchema);
 
