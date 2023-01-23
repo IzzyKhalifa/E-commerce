@@ -2,16 +2,20 @@
     {
         "product_name": "T-shirts",
         "price": 60 ,
-        "stock": 200  
+        "stock": 200 ,
+        "category_name": "clothes"
+
     },
     {
         "product_name": "shorts",
         "price": 50 ,
-        "stock": 100  
+        "stock": 100 ,
+        "category_name": "clothes"
     },
     {
         "product_name": "hats",
         "price": 20 ,
-        "stock": 50  
+        "stock": 50 ,
+        "category_name": "clothes"
     }
 ]

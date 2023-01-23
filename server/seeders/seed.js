@@ -11,11 +11,11 @@ db.once('open', async () => {
     await Profile.deleteMany({});
     await Profile.create(profileSeeds);
 
-    await Product.deleteMany({});
-    await Product.create(productSeeds);
-
     await Category.deleteMany({});
     await Category.create(categorySeeds);
+
+    await Product.deleteMany({});
+    await Product.create(productSeeds);
 
     console.log('all done!');
     process.exit(0);
