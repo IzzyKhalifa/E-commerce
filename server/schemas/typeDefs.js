@@ -19,7 +19,7 @@ type Category {
     name: String
     description: String
     image: String
-    quantity: Int
+    stock: Int
     price: Float
     category: Category
   }
@@ -56,7 +56,7 @@ type Category {
     login(email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateProfile(firstName: String, lastName: String, email: String, password: String): Profile
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateProduct(_id: ID!, stock: Int!): Product
 
     removeProfile: Profile
   }
