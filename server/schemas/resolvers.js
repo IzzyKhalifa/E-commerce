@@ -113,6 +113,13 @@ const resolvers = {
 
       return { token, profile };
     },
+    updateProfile: async (parent, args, context) => {
+      if (context.user) {
+        return await Profile.findByIdAndUpdate(context.user._id, args, { new: true });
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.user) {
