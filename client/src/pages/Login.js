@@ -1,19 +1,52 @@
-import React, { useState } from "react"
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import { ADD_PROFILE } from '../utils/mutations';
 
-export default function useSignIn (props) {
-  let [authMode, setAuthMode] = useState("signin")
+import Auth from "../utils/auth";
+
+export default function Login(props) {
+  let [authMode, setAuthMode] = useState("signin");
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
-  }
+    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
 
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form className="Auth-form" onSubmit={handleFormSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -27,7 +60,10 @@ export default function useSignIn (props) {
               <input
                 type="email"
                 className="form-control mt-1"
-                placeholder="Enter email"
+                placeholder="Your email"
+                name="email"
+                value={formState.email}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group mt-3">
@@ -36,6 +72,9 @@ export default function useSignIn (props) {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
+                name="password"
+                value={formState.password}
+                onChange={handleChange}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
@@ -49,7 +88,7 @@ export default function useSignIn (props) {
           </div>
         </form>
       </div>
-    )
+    );
   }
 
   return (
@@ -98,5 +137,5 @@ export default function useSignIn (props) {
         </div>
       </form>
     </div>
-  )
+  );
 }
