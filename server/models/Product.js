@@ -21,9 +21,9 @@ const productSchema = new Schema({
       model: "Profile",
       key: "id",
     },
-    url: {
-      ype: String,
-    },
+  },
+  url: {
+    type: String,
   },
 });
 
