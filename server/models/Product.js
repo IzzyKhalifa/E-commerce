@@ -15,11 +15,11 @@ const productSchema = new Schema({
     required: true,
     default: 10,
   },
-  owner_id: {
+  email: {
     type: String,
     reference: {
       model: "Profile",
-      key: "id",
+      key: "email",
     },
   },
   url: {

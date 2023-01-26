@@ -17,3 +17,31 @@ export const QUERY_SINGLE_PROFILE = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_ITEMDATA = gql`
+  query allProducts {
+    products {
+      _id
+      product_name
+      price
+      stock
+      email
+      url
+    }
+    
+    profiles {
+      _id
+      name
+      email
+    }
+  }
+`;

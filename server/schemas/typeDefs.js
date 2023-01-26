@@ -14,7 +14,7 @@ const typeDefs = gql`
     product_name: String
     price: Float
     stock: Int
-    owner_id: String
+    email: String
     url: String
   }
 
