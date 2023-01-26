@@ -12,8 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
 
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
+import Login from "./pages/LoginPage";
+// import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -48,7 +48,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile/profile:id" element={<Profile />} />
+            {/* <Route path="/profile/profile:id" element={<Profile />} /> */}
           </Routes>
           <Footer />
         </div>
