@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import Auth from "../utils/auth";
 
-export default function TitlebarImageList() {
+export default function Home() {
   const auth = new Auth();
 
   if (!auth.getToken()) {

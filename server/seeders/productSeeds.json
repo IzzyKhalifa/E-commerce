@@ -1,21 +1,45 @@
 [
     {
-        "product_name": "T-shirts",
+        "product_name": "Breakfast",
         "price": 60 ,
         "stock": 200 ,
-        "category_name": "clothes"
-
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
     },
     {
-        "product_name": "shorts",
-        "price": 50 ,
-        "stock": 100 ,
-        "category_name": "clothes"
+        "product_name": "Burger",
+        "price": 60 ,
+        "stock": 200 ,
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d"
     },
     {
-        "product_name": "hats",
-        "price": 20 ,
-        "stock": 50 ,
-        "category_name": "clothes"
+        "product_name": "Camera",
+        "price": 60 ,
+        "stock": 200 ,
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1522770179533-24471fcdba45"
+    },
+    {
+        "product_name": "Coffee",
+        "price": 60 ,
+        "stock": 200 ,
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c"
+    },
+    {
+        "product_name": "Hats",
+        "price": 60 ,
+        "stock": 200 ,
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1533827432537-70133748f5c8"
+    },
+    {
+        "product_name": "Honey",
+        "price": 60 ,
+        "stock": 200 ,
+        "owner_id": "63cfa3f99787522c02bae7fb",
+        "url": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62"
     }
+    
 ]

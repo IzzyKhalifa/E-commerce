@@ -15,11 +15,14 @@ const productSchema = new Schema({
     required: true,
     default: 10,
   },
-  category_name: {
+  owner_id: {
     type: String,
     reference: {
-      model: "category",
+      model: "Profile",
       key: "id",
+    },
+    url: {
+      ype: String,
     },
   },
 });

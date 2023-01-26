@@ -2,11 +2,6 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-type Category {
-    _id: ID
-    name: String
-  }
-
   type Profile {
     _id: ID
     name: String
@@ -16,12 +11,11 @@ type Category {
 
   type Product {
     _id: ID
-    name: String
-    description: String
-    image: String
-    stock: Int
+    product_name: String
     price: Float
-    category: Category
+    stock: Int
+    owner_id: String
+    url: String
   }
 
   type Order {
@@ -44,8 +38,7 @@ type Category {
     profile(profileId: ID!): Profile
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
-    categories: [Category]
-    products(category: ID, name: String): [Product]
+    products(name: String): [Product]
     product(_id: ID!): Product
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
