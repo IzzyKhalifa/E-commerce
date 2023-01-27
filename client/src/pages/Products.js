@@ -32,9 +32,7 @@ const owners = data.profiles
     
     <div className="sellItem">
       <ImageList sx={{ width: "80%", height: "80%" }}>
-        <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div">Welcome "USER" !!</ListSubheader>
-        </ImageListItem>
+        
         {itemData.map((item) => (
           <ImageListItem key={item.url}>
             <img

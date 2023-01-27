@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
 
-import LandingPage from "./pages/LandingPage.tsx"
+import LandingPage from "./pages/LandingPage.jsx"
 import Products from "./pages/Products";
 import Login from "./pages/LoginPage";
 // import Profile from "./pages/Profile";

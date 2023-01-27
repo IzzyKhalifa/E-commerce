@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Settings, { DefaultSettingsT, SettingsT } from './Settings.tsx';
+import Settings, { DefaultSettingsT } from './Settings.jsx';
 import Carousel from 'react-material-ui-carousel';
 import '../style/Example.scss';
 
@@ -14,11 +14,11 @@ import {
 
 export default function LandingPage() {
 
-    const [settings, setSettings] = useState<SettingsT>(DefaultSettingsT);
+    const [settings, setSettings] = useState(DefaultSettingsT);
 
     return (
         <div style={{ marginTop: "50px", color: "#494949" }}>
-            <Typography variant='h4'>Example: eBay&trade; style</Typography>
+            <Typography variant='h4'>Welcome "User"</Typography>
             <br/>
             <Carousel
                 className="Example"
