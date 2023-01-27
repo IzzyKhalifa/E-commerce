@@ -32,7 +32,8 @@ function Header() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
+      window.location.assign('/'+page);
     setAnchorElNav(null);
   };
 
@@ -56,6 +57,20 @@ function Header() {
     return <Typography textAlign="center">{setting}</Typography>;
   };
 
+  const navBar = (page) => {
+    
+    return (
+      <Button
+        key={page}
+        onClick={() => handleCloseNavMenu(page)}
+        sx={{ my: 2, color: "white", display: "block" }}
+      >
+        {page}
+      </Button>
+    )
+    
+  };
+
   const renderAvatar = () => {
     if (location.pathname === "/login") {
       return null;
@@ -67,51 +82,43 @@ function Header() {
 
     return (
       <>
-      <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              {page}
-            </Button>
+            <>{navBar(page)}</>
           ))}
         </Box>
-      <Box sx={{ flexGrow: 0 }}>
-        <Tooltip title="Open settings">
-          <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-          </IconButton>
-        </Tooltip>
-        <Menu
-          sx={{ mt: "45px" }}
-          id="menu-appbar"
-          anchorEl={anchorElUser}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={Boolean(anchorElUser)}
-          onClose={handleCloseUserMenu}
-        >
-          {settings.map((setting) => (
-            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-              {renderOptions(setting)}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "45px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                {renderOptions(setting)}
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
       </>
     );
   };
-
-  
 
   return (
     <AppBar position="static">
