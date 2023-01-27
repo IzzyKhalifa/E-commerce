@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART, CHECKOUT } from "../../utils/mutations";
+import "../../style/ShoppingCart.css"
 
 function ShoppingCart() {
   const [items, setItems] = useState([]);
@@ -28,20 +29,20 @@ function ShoppingCart() {
   const total = items.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div>
+    <div class="shopping-cart">
       <h2>Shopping Cart</h2>
       <ul>
         {items.map((item) => (
-          <li key={item.id}>
+          <li class="shopping-cart__item" key={item.id}>
             {item.name} - ${item.price}
-            <button onClick={() => handleRemoveFromCart(item.id)}>
+            <button class="shopping-cart__remove-button" onClick={() => handleRemoveFromCart(item.id)}>
               Remove
             </button>
           </li>
         ))}
       </ul>
-      <p>Total: ${total}</p>
-      <button onClick={handleCheckout}>Checkout</button>
+      <p class="shopping-cart__total">Total: ${total}</p>
+      <button class="shopping-cart__checkout-button" onClick={handleCheckout}>Checkout</button>
     </div>
   );
 }

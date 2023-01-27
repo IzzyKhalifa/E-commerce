@@ -19,19 +19,20 @@ export default function LandingPage() {
   const [settings, setSettings] = useState(DefaultSettingsT);
 
   if (loading) {
+    console.log("loading")
     return (
       <div>
         <h1>loading</h1>
       </div>
     );
-  }
+  }else{console.log(data)}
 
-  console.log(data)
+  
 
   return (
     
     <div style={{ marginTop: "50px", color: "#494949" }}>
-      <Typography variant="h4">Welcome {data.me.name}</Typography>
+      {/* <Typography variant="h4">Welcome {data.me.name}</Typography> */}
       <br />
       <Carousel
         className="Example"
