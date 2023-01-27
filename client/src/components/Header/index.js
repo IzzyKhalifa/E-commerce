@@ -17,7 +17,7 @@ import { useLocation } from "react-router-dom";
 import ShoppingCartModal from "../Shopping Cart/ShoppingCartModol";
 
 const pages = ["Products", "Pricing", "Blog" ];
-const settings = ["Profile", "Account", "Dashboard", "Logout",<ShoppingCartModal/>];
+const settings = ["Profile", "Account", "Dashboard",<ShoppingCartModal/>, "Logout"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
