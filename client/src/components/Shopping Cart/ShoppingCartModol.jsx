@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ShoppingCart from "./ShoppingCart";
 import { Modal , Box } from "@mui/material";
+import "../../style/ShoppingCart.css"
 
 function ShoppingCartModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ function ShoppingCartModal() {
 
   return (
     <>
-      <button onClick={handleOpen}>View Cart</button>
+      <button class="shoppingCartButton" onClick={handleOpen}>View Cart</button>
       <Modal
         open={isOpen}
         onClose={handleClose}
