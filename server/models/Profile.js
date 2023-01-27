@@ -17,7 +17,7 @@ const profileSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 6,
   },
 });
 
