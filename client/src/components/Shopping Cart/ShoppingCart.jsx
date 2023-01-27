@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_TO_CART, CHECKOUT } from "../../utils/mutations";
 import "../../style/ShoppingCart.css"
 
-function ShoppingCart() {
+function ShoppingCart({handleClose}) {
   const [items, setItems] = useState([]);
   const [addToCart] = useMutation(ADD_TO_CART);
   const [checkout] = useMutation(CHECKOUT);
@@ -43,6 +43,7 @@ function ShoppingCart() {
       </ul>
       <p class="shopping-cart__total">Total: ${total}</p>
       <button class="shopping-cart__checkout-button" onClick={handleCheckout}>Checkout</button>
+      <button class="shopping-cart__checkout-button" onClick={handleClose}>Close</button>
     </div>
   );
 }

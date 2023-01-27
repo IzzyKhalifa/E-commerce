@@ -18,8 +18,7 @@ function ShoppingCartModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       ><Box>
-        <ShoppingCart />
-        <button onClick={handleClose}>Close</button>
+        <ShoppingCart handleClose={handleClose}/>
         </Box>
       </Modal>
     </>
