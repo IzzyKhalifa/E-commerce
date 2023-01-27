@@ -29,6 +29,7 @@ export default function LandingPage() {
   console.log(data)
 
   return (
+    
     <div style={{ marginTop: "50px", color: "#494949" }}>
       <Typography variant="h4">Welcome {data.me.name}</Typography>
       <br />
@@ -60,24 +61,11 @@ export default function LandingPage() {
   );
 }
 
-type Item = {
-  Name: string,
-  Caption: string,
-  contentPosition: "left" | "right" | "middle",
-  Items: { Name: string, Image: string }[],
-};
-
-interface BannerProps {
-  item: Item;
-  contentPosition: "left" | "right" | "middle";
-  length?: number;
-}
-
-const Banner = (props: BannerProps) => {
+const Banner = (props) => {
   const contentPosition = props.contentPosition
     ? props.contentPosition
     : "left";
-  const totalItems: number = props.length ? props.length : 3;
+  const totalItems = props.length ? props.length : 3;
   const mediaLength = totalItems - 1;
 
   let items = [];
@@ -126,7 +114,7 @@ const Banner = (props: BannerProps) => {
   );
 };
 
-const items: Item[] = [
+const items = [
   {
     Name: "Electronics",
     Caption: "Electrify your friends!",

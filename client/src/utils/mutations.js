@@ -24,3 +24,24 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_TO_CART = gql`
+  mutation addToCart($productId: ID!) {
+    addToCart(productId: $productId) {
+      id
+      name
+      price
+    }
+  }
+`;
+
+export const CHECKOUT = gql`
+  mutation checkout($token: String!) {
+    checkout(token: $token) {
+      id
+      amount
+      currency
+      status
+    }
+  }
+`;
