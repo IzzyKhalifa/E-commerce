@@ -25,7 +25,11 @@ export default function LandingPage() {
         <h1>loading</h1>
       </div>
     );
-  }else{console.log(data)}
+  }
+
+  if(!data){
+    window.location.assign('/login')
+  }
 
   
 
