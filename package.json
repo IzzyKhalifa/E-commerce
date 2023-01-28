@@ -1,6 +1,10 @@
 {
   "name": "e-commerce",
   "version": "0.1.0",
+  "engines": {
+    "node": "v16.17.1",
+    "npm": "8.15.0"
+  },
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.8",
