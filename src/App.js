@@ -14,7 +14,7 @@ import "./Login.css";
 import LandingPage from "./pages/LandingPage.jsx"
 import Products from "./pages/Products";
 import Login from "./pages/LoginPage";
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -49,7 +49,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/profile/profile:id" element={<Profile />} /> */}
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
         <Footer />

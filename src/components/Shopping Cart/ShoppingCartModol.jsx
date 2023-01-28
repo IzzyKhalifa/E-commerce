@@ -11,7 +11,7 @@ function ShoppingCartModal() {
 
   return (
     <>
-      <button class="shoppingCartButton" onClick={handleOpen}>View Cart</button>
+      <button className="shoppingCartButton" onClick={handleOpen}>View Cart</button>
       <Modal
         open={isOpen}
         onClose={handleClose}
