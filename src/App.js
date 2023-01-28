@@ -17,6 +17,7 @@ import Login from "./pages/LoginPage";
 import Profile from "./pages/Profile";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import DirectionSnackbar from "./components/Snackbars/Snackbars";
 
 const httpLink = createHttpLink({
   uri: process.env.REACT_APP_GRAPHQL_URI || "http://localhost:3001/graphql ",

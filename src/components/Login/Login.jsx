@@ -71,7 +71,7 @@ export default function Login({ changeAuthMode }) {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button id="submit" type="submit" className="btn btn-primary">
               Submit
             </button>
           </div>
