@@ -19,7 +19,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
-  uri: process.env.GRAPHQL_URI || "http://localhost:3001/graphql ",
+  uri: process.env.REACT_APP_GRAPHQL_URI || "http://localhost:3001/graphql ",
 });
 
 const authLink = setContext((_, { headers }) => {
