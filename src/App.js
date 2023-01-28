@@ -15,8 +15,8 @@ import LandingPage from "./pages/LandingPage.jsx"
 import Products from "./pages/Products";
 import Login from "./pages/LoginPage";
 import Profile from "./pages/Profile";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const httpLink = createHttpLink({
   uri: process.env.REACT_APP_GRAPHQL_URI || "http://localhost:3001/graphql ",

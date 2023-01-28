@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Login from "../components/Login";
-import Signup from "../components/Signup";
+import Login from "../components/Login/Login";
+import Signup from "../components/Signup/Signup";
 
 export default function LoginPage(props) {
   let [authMode, setAuthMode] = useState("signin");

@@ -31,6 +31,7 @@ export default function Signup({ changeAuthMode }) {
 
       const auth = new Auth()
       auth.login(data.addProfile.token);
+      window.location.assign("/");
     } catch (e) {
       console.error(e);
     }
@@ -38,7 +39,7 @@ export default function Signup({ changeAuthMode }) {
 
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form" onClick={handleSignup}>
+      <form className="Auth-form" onSubmit={handleSignup}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign up</h3>
           <div className="text-center">
@@ -50,7 +51,7 @@ export default function Signup({ changeAuthMode }) {
           <div className="form-group mt-3">
             <label>Full Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="Your username"
               name="name"
