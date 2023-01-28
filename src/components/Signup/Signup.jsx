@@ -9,7 +9,7 @@ export default function Signup({ changeAuthMode }) {
     email: "",
     password: "",
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addProfile] = useMutation(ADD_PROFILE);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +31,6 @@ export default function Signup({ changeAuthMode }) {
 
       const auth = new Auth()
       auth.login(data.addProfile.token);
-      window.location.assign("/");
     } catch (e) {
       console.error(e);
     }
