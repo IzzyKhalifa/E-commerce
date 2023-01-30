@@ -3,7 +3,7 @@ import ShoppingCart from "./ShoppingCart";
 import { Modal , Box } from "@mui/material";
 import "../../style/ShoppingCart.css"
 
-function ShoppingCartModal() {
+function ShoppingCartModal({handleAddToCart}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
@@ -18,7 +18,7 @@ function ShoppingCartModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       ><Box>
-        <ShoppingCart handleClose={handleClose}/>
+        <ShoppingCart handleClose={handleClose} />
         </Box>
       </Modal>
     </>

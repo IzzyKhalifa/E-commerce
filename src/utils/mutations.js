@@ -26,14 +26,12 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_TO_CART = gql`
-  mutation addToCart($productId: ID!) {
-    addToCart(productId: $productId) {
-      id
-      name
-      price
-    }
+export const ADD_ORDER = gql`
+  mutation AddOrder($addOrderProducts2: [ID]!) {
+  addOrder(products: $addOrderProducts2) {
+    _id
   }
+}
 `;
 
 export const CHECKOUT = gql`

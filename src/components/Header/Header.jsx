@@ -16,10 +16,20 @@ import Auth from "../../utils/auth";
 import { useLocation } from "react-router-dom";
 import ShoppingCartModal from "../Shopping Cart/ShoppingCartModol";
 
-const pages = ["Products", "Pricing", "Blog" ];
-const settings = ["Profile", "Account", "Dashboard",<ShoppingCartModal/>, "Logout"];
+function Header({ items, setItems, handleAddToCart }) {
+  const pages = ["Products", "Pricing", "Blog"];
+  const settings = [
+    "Profile",
+    "Account",
+    "Dashboard",
+    <ShoppingCartModal
+      items={items}
+      setItems={setItems}
+      handleAddToCart={handleAddToCart}
+    />,
+    "Logout",
+  ];
 
-function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -34,7 +44,7 @@ function Header() {
   };
 
   const handleCloseNavMenu = (page) => {
-      window.location.assign('/'+page);
+    window.location.assign("/" + page);
     setAnchorElNav(null);
   };
 
@@ -59,7 +69,6 @@ function Header() {
   };
 
   const navBar = (page) => {
-    
     return (
       <Button
         key={page}
@@ -68,8 +77,7 @@ function Header() {
       >
         {page}
       </Button>
-    )
-    
+    );
   };
 
   const renderAvatar = () => {
@@ -89,7 +97,6 @@ function Header() {
           ))}
         </Box>
         <Box sx={{ flexGrow: 0 }}>
-          
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

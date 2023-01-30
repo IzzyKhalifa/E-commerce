@@ -7,7 +7,6 @@ export default function DirectionSnackbar() {
   let [authMode] = useState("signin");
 
   function TransitionUp(props) {
-    console.log(authMode);
     if (authMode === "signin") {
       return <Slide {...props} direction="up" />;
     }

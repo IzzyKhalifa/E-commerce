@@ -1,5 +1,5 @@
 # E-designs
-The webpage is a E-commerce webpage for the user to buy/sell different products it's so open ended there isn't any limitations on what you can buy/sell on the website. You can place all your products in the shopping cart and proceed to checkout at anytime. As for now you can't add products but I'm working on the future developments as in giving products ratings and reviews too. 
+The webpage is a E-commerce webpage for the user to buy/sell different products it's so open ended there isn't any limitations on what you can buy/sell on the website. You can place all your products in the shopping cart and proceed to checkout at anytime. As for now you can't add products but I'm working on the future developments as in giving products ratings and reviews too. This repo is for the front-end of the webpage there is a link provided at the bottom for the back-end repo.
 ## User Story 
 
 ```md

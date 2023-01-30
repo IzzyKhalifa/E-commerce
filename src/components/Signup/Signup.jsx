@@ -22,7 +22,6 @@ export default function Signup({ changeAuthMode }) {
 
   const handleSignup = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addProfile({

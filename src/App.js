@@ -1,32 +1,22 @@
 import React from "react";
 import {
   ApolloClient,
-  InMemoryCache,
+  InMemoryCache, 
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
-
-import LandingPage from "./pages/LandingPage.jsx"
-import Products from "./pages/Products";
-import Login from "./pages/LoginPage";
-import Profile from "./pages/Profile";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import DirectionSnackbar from "./components/Snackbars/Snackbars";
 
 const httpLink = createHttpLink({
   uri: process.env.REACT_APP_GRAPHQL_URI || "http://localhost:3001/graphql ",
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
-  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
@@ -41,20 +31,10 @@ const client = new ApolloClient({
 });
 
 export default function App() {
+
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Header />
-          <Routes>
-          <Route path="/" element={<LandingPage />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+      <HomePage />
     </ApolloProvider>
   );
 }

@@ -14,12 +14,13 @@ import {
   Button,
 } from "@mui/material";
 
+
+
 export default function LandingPage() {
   const { data, loading } = useQuery(QUERY_ME);
   const [settings, setSettings] = useState(DefaultSettingsT);
 
   if (loading) {
-    console.log("loading")
     return (
       <div>
         <h1>loading</h1>
@@ -27,16 +28,15 @@ export default function LandingPage() {
     );
   }
 
-  if(!data){
-    window.location.assign('/login')
+  if (!data) {
+    window.location.assign("/login");
   }
 
-  
-
   return (
-    
     <div style={{ marginTop: "50px", color: "#494949" }}>
-      <Typography class="userName" variant="h4">Welcome {data.me.name}</Typography>
+      <Typography class="userName" variant="h4">
+        Welcome {data.me.name}
+      </Typography>
       <br />
       <Carousel
         className="Example"
@@ -62,6 +62,7 @@ export default function LandingPage() {
       </Carousel>
       <br />
       <Settings settings={settings} setSettings={setSettings} />
+      <Bio />
     </div>
   );
 }
@@ -111,11 +112,26 @@ const Banner = (props) => {
   }
 
   return (
-    <Card raised className="Banner">
-      <Grid container spacing={0} className="BannerGrid">
-        {items}
-      </Grid>
-    </Card>
+    <>
+      <Card raised className="Banner">
+        <Grid container spacing={0} className="BannerGrid">
+          {items}
+        </Grid>
+      </Card>
+    </>
+  );
+};
+
+const Bio = () => {
+  return (
+    <div className="Bio">
+      We are a dynamic e-commerce company offering a wide range of products to
+      enhance your daily life. With a focus on quality and customer
+      satisfaction, we strive to bring you the latest and greatest products at
+      affordable prices. Our team of experts works tirelessly to curate a
+      diverse selection of items to meet all your needs. Shop with us today and
+      experience the convenience and excitement of online shopping.
+    </div>
   );
 };
 
