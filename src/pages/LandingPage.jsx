@@ -34,7 +34,7 @@ export default function LandingPage() {
 
   return (
     <div style={{ marginTop: "50px", color: "#494949" }}>
-      <Typography class="userName" variant="h4">
+      <Typography className="userName" variant="h4">
         Welcome {data.me.name}
       </Typography>
       <br />

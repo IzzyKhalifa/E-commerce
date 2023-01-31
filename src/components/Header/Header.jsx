@@ -16,19 +16,9 @@ import Auth from "../../utils/auth";
 import { useLocation } from "react-router-dom";
 import ShoppingCartModal from "../Shopping Cart/ShoppingCartModol";
 
-function Header({ items, setItems, handleAddToCart }) {
+function Header({ items, setItems, handleAddToCart, itemsInCart }) {
   const pages = ["Products", "Pricing", "Blog"];
-  const settings = [
-    "Profile",
-    "Account",
-    "Dashboard",
-    <ShoppingCartModal
-      items={items}
-      setItems={setItems}
-      handleAddToCart={handleAddToCart}
-    />,
-    "Logout",
-  ];
+  const settings = ["Profile", "Account", "Dashboard", "View cart", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -63,6 +53,17 @@ function Header({ items, setItems, handleAddToCart }) {
         <Typography textAlign="center" onClick={(e) => logout(e)}>
           {setting}
         </Typography>
+      );
+    }
+
+    if (setting === "View cart") {
+      return (
+        <ShoppingCartModal
+          items={items}
+          setItems={setItems}
+          handleAddToCart={handleAddToCart}
+          itemsInCart={itemsInCart}
+        />
       );
     }
     return <Typography textAlign="center">{setting}</Typography>;

@@ -15,12 +15,15 @@ import { ADD_ORDER } from "../utils/mutations";
 
 export default function HomePage() {
   const [items, setItems] = useState([]);
+  const [itemsInCart, setItemsInCart] = useState([]);
   const [addOrder] = useMutation(ADD_ORDER);
 
   const handleAddToCart = async (productId) => {
     console.log(productId)
-    const { data } = await addOrder({ variables: { addOrderProducts2:[productId] } });
-    setItems((prevItems) => [...prevItems, data.addToCart]);
+    setItems((prevItems) => [...prevItems, productId]);
+    const { data } = await addOrder({ variables: { products:items } });
+    console.log(data)
+    setItemsInCart(data.addOrder.products)
   };
 
   return (
@@ -30,6 +33,7 @@ export default function HomePage() {
           items={items}
           setItems={setItems}
           handleAddToCart={handleAddToCart}
+          itemsInCart={itemsInCart}
         />
         <Routes>
           <Route path="/" element={<LandingPage />} />
