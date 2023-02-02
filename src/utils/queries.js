@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PROFILES = gql`
   query allProfiles {
@@ -37,13 +37,30 @@ export const QUERY_ITEMDATA = gql`
       email
       url
     }
-    
+
     profiles {
       _id
       name
       email
     }
   }
+`;
+
+export const QUERY_ACTIVE_ORDER = gql`
+query orderActive {
+  orderActive {
+    _id
+    products {
+      _id
+      product_name
+      price
+      stock
+      email
+      url
+    }
+    purchaseDate
+  }
+}
 `;
 
 export const QUERY_CHECKOUT = gql`

@@ -3,7 +3,7 @@ import ShoppingCart from "./ShoppingCart";
 import { Modal, Box } from "@mui/material";
 import "../../style/ShoppingCart.css";
 
-function ShoppingCartModal({ items, setItems, itemsInCart }) {
+function ShoppingCartModal({ items, setItems, itemsInCart, setItemsInCart }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
@@ -26,6 +26,7 @@ function ShoppingCartModal({ items, setItems, itemsInCart }) {
             items={items}
             setItems={setItems}
             itemsInCart={itemsInCart}
+            setItemsInCart={setItemsInCart}
           />
         </Box>
       </Modal>

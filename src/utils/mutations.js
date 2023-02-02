@@ -27,20 +27,37 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ORDER = gql`
-  mutation Mutation($products: [ID]!) {
-  addOrder(products: $products) {
+  mutation addOrder($products: [ID]!) {
+    addOrder(products: $products) {
+      products {
+        _id
+        product_name
+        price
+        stock
+        email
+        url
+      }
+      purchaseDate
+      _id
+    }
+  }
+`;
+
+export const REMOVE_FROM_ORDER = gql`
+  mutation removeFromOrder($orderId: ID!, $productId: ID!) {
+  removeFromOrder(orderId: $orderId, productId: $productId) {
+    _id
     products {
       _id
-      product_name
-      price
-      stock
       email
+      price
+      product_name
+      stock
       url
     }
-    purchaseDate
-    _id
   }
 }
+
 `;
 
 export const CHECKOUT = gql`

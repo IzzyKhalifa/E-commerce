@@ -18,12 +18,11 @@ export default function HomePage() {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [addOrder] = useMutation(ADD_ORDER);
 
-  const handleAddToCart = async (productId) => {
-    console.log(productId)
-    setItems((prevItems) => [...prevItems, productId]);
-    const { data } = await addOrder({ variables: { products:items } });
-    console.log(data)
+  const handleAddToCart = async (product) => {
+    setItems((prevItems) => [...prevItems, product._id]);
+    const { data } = await addOrder({ variables: { products:product._id } });
     setItemsInCart(data.addOrder.products)
+    console.log(data.addOrder._id)
   };
 
   return (
@@ -34,6 +33,8 @@ export default function HomePage() {
           setItems={setItems}
           handleAddToCart={handleAddToCart}
           itemsInCart={itemsInCart}
+          setItemsInCart={setItemsInCart}
+          // orderId={addOrder._id}
         />
         <Routes>
           <Route path="/" element={<LandingPage />} />

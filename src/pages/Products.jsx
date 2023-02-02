@@ -25,6 +25,7 @@ export default function Products({ handleAddToCart }) {
     );
   }
   const itemData = data?.products;
+  // console.log(itemData)
   const owners = data.profiles;
   return (
     <div className="sellItem">
@@ -41,7 +42,7 @@ export default function Products({ handleAddToCart }) {
               title={item.product_name + "\t $" + item.price}
               subtitle={owners.find((o) => o.email === item.email).name}
               actionIcon={
-                <IconButton onClick={() => handleAddToCart(item._id)}>
+                <IconButton onClick={() => handleAddToCart(item)}>
                   <AddShoppingCartIcon
                     style={{ color: "whitesmoke", width: "60px" }}
                   />
