@@ -21,7 +21,7 @@ function ShoppingCart({
   const [orderID, setOrderID] = useState();
 
   useEffect(() => {
-    if (data) {
+    if (data && !loading) {
       setOrderID(data.orderActive._id);
       setItemsInCart(data.orderActive.products);
     }

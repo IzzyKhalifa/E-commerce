@@ -19,6 +19,7 @@ import {
 export default function LandingPage() {
   const { data, loading } = useQuery(QUERY_ME);
   const [settings, setSettings] = useState(DefaultSettingsT);
+  console.log(data)
 
   if (loading) {
     return (
