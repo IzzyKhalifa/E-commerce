@@ -7,6 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import HomePage from "./pages/HomePage";
+import "@stripe/stripe-js"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";

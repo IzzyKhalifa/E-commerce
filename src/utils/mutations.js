@@ -61,12 +61,18 @@ export const REMOVE_FROM_ORDER = gql`
 `;
 
 export const CHECKOUT = gql`
-  mutation checkout($token: String!) {
-    checkout(token: $token) {
-      id
-      amount
-      currency
-      status
+  mutation checkout {
+  checkout {
+    _id
+    purchaseDate
+    products {
+      _id
+      product_name
+      price
+      stock
+      email
+      url
     }
   }
+}
 `;

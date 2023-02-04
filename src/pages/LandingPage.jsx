@@ -4,6 +4,8 @@ import Carousel from "react-material-ui-carousel";
 import "../style/Example.scss";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+import { Link } from "react-router-dom";
+import "../style/Example.scss"
 
 import {
   Card,
@@ -84,7 +86,7 @@ const Banner = (props) => {
         <Typography className="Caption">{props.item.Caption}</Typography>
 
         <Button variant="outlined" className="ViewButton">
-          View Now
+          <Link to="/products" >View Now</Link>
         </Button>
       </CardContent>
     </Grid>
@@ -138,47 +140,47 @@ const Bio = () => {
 
 const items = [
   {
-    Name: "Electronics",
-    Caption: "Electrify your friends!",
+    Name: "Breakfast",
+    Caption: "Meet up with your friends!",
     contentPosition: "left",
     Items: [
       {
-        Name: "Macbook Pro",
-        Image: "https://source.unsplash.com/featured/?macbook",
+        Name: "Burger",
+        Image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
       },
       {
-        Name: "iPhone",
-        Image: "https://source.unsplash.com/featured/?iphone",
+        Name: "Coffee",
+        Image: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
       },
     ],
   },
   {
-    Name: "Home Appliances",
-    Caption: "Say no to manual home labour!",
+    Name: "Must haves",
+    Caption: "Have fun!",
     contentPosition: "middle",
     Items: [
       {
-        Name: "Washing Machine WX9102",
-        Image: "https://source.unsplash.com/featured/?washingmachine",
+        Name: "Hats",
+        Image: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
       },
       {
-        Name: "Learus Vacuum Cleaner",
-        Image: "https://source.unsplash.com/featured/?vacuum,cleaner",
+        Name: "Camera",
+        Image: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
       },
     ],
   },
   {
-    Name: "Decoratives",
-    Caption: "Give style and color to your living room!",
+    Name: "Food",
+    Caption: "Good food good times!",
     contentPosition: "right",
     Items: [
       {
-        Name: "Living Room Lamp",
-        Image: "https://source.unsplash.com/featured/?lamp",
+        Name: "Breakfast",
+        Image: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
       },
       {
-        Name: "Floral Vase",
-        Image: "https://source.unsplash.com/featured/?vase",
+        Name: "Honey",
+        Image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
       },
     ],
   },

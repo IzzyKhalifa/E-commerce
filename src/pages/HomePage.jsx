@@ -34,7 +34,6 @@ export default function HomePage() {
           handleAddToCart={handleAddToCart}
           itemsInCart={itemsInCart}
           setItemsInCart={setItemsInCart}
-          // orderId={addOrder._id}
         />
         <Routes>
           <Route path="/" element={<LandingPage />} />

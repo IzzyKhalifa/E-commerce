@@ -17,8 +17,8 @@ import { useLocation } from "react-router-dom";
 import ShoppingCartModal from "../Shopping Cart/ShoppingCartModol";
 
 function Header({ items, setItems, handleAddToCart, itemsInCart, setItemsInCart }) {
-  const pages = ["Products", "Pricing", "Blog"];
-  const settings = ["Profile", "Account", "Dashboard", "View cart", "Logout"];
+  const pages = ["Products",];
+  const settings = ["View cart", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

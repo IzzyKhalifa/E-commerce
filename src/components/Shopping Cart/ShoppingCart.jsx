@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+// import { loadStripe } from "@stripe/stripe-js";
+import Box from "@mui/material/Box";
 import { useMutation } from "@apollo/client";
-import { CHECKOUT } from "../../utils/mutations";
 import "../../style/ShoppingCart.css";
-import { REMOVE_FROM_ORDER } from "../../utils/mutations";
+import { REMOVE_FROM_ORDER, CHECKOUT } from "../../utils/mutations";
 import { useQuery } from "@apollo/client";
 import { QUERY_ACTIVE_ORDER } from "../../utils/queries";
+
+// const stripePromise = loadStripe('pk_test_51MXH42D7m7L3fey0bTsc1nD81lLOWit1KCCVm2BLNnpayuh9UaqMKSklvwa25nsGVJlprRUVbmmWlCxkkiItgFdq00NyjxDHiS');
 
 function ShoppingCart({
   items,
@@ -13,31 +17,31 @@ function ShoppingCart({
   itemsInCart,
   setItemsInCart,
 }) {
-  console.log(items);
-  const [checkout] = useMutation(CHECKOUT);
-  const [removeFromOrder] = useMutation(REMOVE_FROM_ORDER);
+
   const { data, loading } = useQuery(QUERY_ACTIVE_ORDER);
 
+  const [checkoutOrder] = useMutation(CHECKOUT);
+  const [removeFromOrder] = useMutation(REMOVE_FROM_ORDER);
   const [orderID, setOrderID] = useState();
 
+  const total = itemsInCart.reduce((acc, item) => acc + item.price, 0);
+
   useEffect(() => {
-    if (data && !loading) {
+    if (data) {
+      // console.log(data);
       setOrderID(data.orderActive._id);
       setItemsInCart(data.orderActive.products);
     }
   }, [data, loading, setItemsInCart]);
 
-  const handleCheckout = async (token) => {
-    const { data } = await checkout({ variables: { token } });
+
+  const handleCheckout = async () => {
+    const { data: checkoutData } = await checkoutOrder();
+    alert(`Proceed to payment for order number ${checkoutData.checkout._id} with total: $${total}`)
+    setItemsInCart([]);
     setItems([]);
-    alert(
-      `Charge complete! ID: ${data.checkout.id} Amount: ${data.checkout.amount} ${data.checkout.currency} Status: ${data.checkout.status}`
-    );
   };
 
-  if (loading) {
-    return null;
-  }
 
   const handleRemoveFromCart = async (productId) => {
     const { data: newData } = await removeFromOrder({
@@ -48,8 +52,17 @@ function ShoppingCart({
     setItems(newData.removeFromOrder.products);
   };
 
-  const total = itemsInCart.reduce((acc, item) => acc + item.price, 0);
-  console.log(itemsInCart);
+  // console.log(itemsInCart);
+
+  if (loading) {
+    console.log("loading");
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
   return (
     <div className="shopping-cart">
       <h2>Shopping Cart</h2>

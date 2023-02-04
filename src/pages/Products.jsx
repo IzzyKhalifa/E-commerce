@@ -29,7 +29,7 @@ export default function Products({ handleAddToCart }) {
   const owners = data.profiles;
   return (
     <div className="sellItem">
-      <ImageList sx={{ width: "80%", height: "80%" }}>
+      <ImageList sx={{ width: "50%", height: "50%" }}>
         {itemData.map((item) => (
           <ImageListItem key={item.url}>
             <img

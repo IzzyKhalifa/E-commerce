@@ -63,10 +63,17 @@ query orderActive {
 }
 `;
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
+export const QUERY_COMPLETED_ORDER = gql`
+query orderCompleted {
+    _id
+    purchaseDate
+    products {
+      _id
+      product_name
+      price
+      stock
+      email
+      url
     }
   }
 `;
