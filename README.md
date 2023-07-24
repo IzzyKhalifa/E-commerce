@@ -3,8 +3,13 @@ The webpage is a E-commerce webpage for the user to buy/sell different products 
 ## User Story 
 
 ```md
-AS A user I want to lookup different products
-SO THAT I can keep a list of products to buy in my shopping cart
+AS A new user of the e-commerce website, I want to be able to create an account.
+
+WHEN browsing the products page, I want the option to add items to my shopping cart so I can keep track of the items I want to purchase.
+
+ONCE I have all the items I want in my cart, I want to be able to proceed to checkout.
+
+Overall, I expect a smooth and seamless user experience when shopping on the e-commerce website, with the ability to sign up, log in, add items to my cart, and checkout with ease.
 ```
 
 ## Technologies Used

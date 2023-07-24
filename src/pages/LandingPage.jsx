@@ -140,17 +140,17 @@ const Bio = () => {
 
 const items = [
   {
-    Name: "Breakfast",
-    Caption: "Meet up with your friends!",
+    Name: "Work",
+    Caption: "Increase your productivity!",
     contentPosition: "left",
     Items: [
       {
-        Name: "Burger",
-        Image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+        Name: "Work Monitor",
+        Image: "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixlib",
       },
       {
-        Name: "Coffee",
-        Image: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+        Name: "Productivity Mouse",
+        Image: "https://images.unsplash.com/photo-1625750319971-ee4b61e68df8?ixlib",
       },
     ],
   },
@@ -160,27 +160,27 @@ const items = [
     contentPosition: "middle",
     Items: [
       {
-        Name: "Hats",
-        Image: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+        Name: "Gaming Keyboard",
+        Image: "https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?ixlib",
       },
       {
-        Name: "Camera",
-        Image: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+        Name: "Gaming Mouse",
+        Image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib",
       },
     ],
   },
   {
-    Name: "Food",
-    Caption: "Good food good times!",
+    Name: "Luxury",
+    Caption: "Best quality!",
     contentPosition: "right",
     Items: [
       {
-        Name: "Breakfast",
-        Image: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+        Name: "Apple Keyboard",
+        Image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib",
       },
       {
-        Name: "Honey",
-        Image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+        Name: "Cannon Camera",
+        Image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib",
       },
     ],
   },
